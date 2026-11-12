@@ -1,0 +1,35 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "prerender-test",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  // Drains the render queue and refreshes old snapshots. Do not remove.
+  "triggers": { "crons": ["* * * * *"] },
+  // Cloudflare Browser Run renders the pages.
+  "browser": { "binding": "BROWSER" },
+  // Snapshot index, crawler visits and monthly usage. Tables are created on first run.
+  "d1_databases": [
+    { "binding": "DB", "database_name": "bubble-edge-prerender","database_id": "6fc528ab-d3e5-42b1-8330-316fc9862368" }
+  ],
+  // Stored snapshot HTML.
+  "r2_buckets": [
+    { "binding": "SNAPSHOTS", "bucket_name": "bubble-edge-prerender-snapshots","preview_bucket_name": "bubble-edge-prerender-snapshots" }
+  ],
+  "observability": { "enabled": true },
+  "vars": {
+    // ORIGIN_URL is deliberately not listed. Leave it unset when the Worker runs on
+    // your app's own domain (the normal setup). For a standalone test on a
+    // workers.dev URL, add it under Settings, Variables and Secrets, for example
+    // "https://yourapp.bubbleapps.io/version-test".
+    // "ai", "ai+social" or "all" (adds search engine crawlers).
+    "BOT_SET": "ai+social",
+    // Cost guards.
+    "MAX_PAGES": "50",
+    "MAX_RENDERS_PER_MONTH": "500",
+    // Free plan pace is one render about every 10 seconds. Lower to 2 on Workers Paid.
+    "RENDER_INTERVAL_SECONDS": "11",
+    // Re-render snapshots older than this many hours.
+    "SNAPSHOT_TTL_HOURS": "168"
+  }
+}

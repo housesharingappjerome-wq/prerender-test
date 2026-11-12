@@ -1,0 +1,25 @@
+Edge Prerender Worker Licence
+Copyright (c) 2026 Red Center Studio. All rights reserved.
+
+Permission is granted, free of charge, to any person obtaining a copy of this
+software to:
+
+1. deploy and run it on Cloudflare accounts they own or manage, for their own
+   websites and for the websites of their clients; and
+2. modify it for those deployments.
+
+The following are not permitted without written permission from the copyright
+holder:
+
+1. selling, sublicensing or redistributing this software or a modified version
+   of it, alone or as part of another product, plugin, template or service
+   offered to others; and
+2. removing this notice from copies of the software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

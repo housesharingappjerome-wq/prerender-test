@@ -1,0 +1,14 @@
+{
+  "name": "prerender-test",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloudflare Worker that serves pre-rendered snapshots of a Bubble app to AI crawlers. Companion to the Edge Prerender Bubble plugin.",
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}
